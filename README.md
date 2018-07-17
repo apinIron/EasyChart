@@ -13,3 +13,6 @@
 ### 效果
 
 #### Style 1
+
+![](https://github.com/apinIron/EasyChart/blob/master/image/1.png)
+
