@@ -97,7 +97,48 @@ setCalibrationBetweenTextPaint(float spSize, @ColorInt int color)
 
 ![](https://github.com/apinIron/EasyChart/blob/master/image/2.png)
 
+```
+
+//设置圆环颜色 (默认值: Color.argb(120, 255, 255, 255))
+setArcColor(@ColorInt int color)
+
+//设置进度圆环的颜色 (默认值: Color.argb(200, 255, 255, 255))
+setProgressColor(@ColorInt int color)
+
+//设置圆环的刻度大小 (默认值: 2.5dp)
+setArcCalibrationSize(int dpSize)
+
+```
+
 #### Style 3
 
 ![](https://github.com/apinIron/EasyChart/blob/master/image/3.png)
+
+```
+
+//设置圆环之间的距离 (默认值: 10dp)
+setArcSpacing(float dpSize)
+
+//设置外环的画笔属性 (默认值: 1.5dp Color.argb(80, 255, 255, 255))
+setOuterArcPaint(float dpSize, @ColorInt int color)
+
+//设置外环的进度颜色 (默认值: Color.argb(200, 255, 255, 255))
+setProgressOuterArcColor(@ColorInt int color)
+
+//设置内环的画笔属性 (默认值: 1.5dp Color.argb(50, 255, 255, 255))
+setInnerArcPaint(float dpSize, @ColorInt int color)
+
+//设置内环的进度颜色 (默认值: Color.argb(170, 255, 255, 255))
+setProgressInnerArcPaint(@ColorInt int color)
+
+//设置内环实线和虚线状态 (默认值: float[] { 10, 10 })
+setInnerArcPathEffect(float[] intervals)
+
+//设置进度点的画笔属性 (默认值: 3dp white)
+setProgressPointPaint(float dpRadiusSize,@ColorInt int color)
+
+//设置指示器颜色 (默认值: Color.argb(200, 255, 255, 255))
+setIndicatorPaint(@ColorInt int color)
+
+```
 
