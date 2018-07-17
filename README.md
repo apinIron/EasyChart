@@ -12,6 +12,52 @@
 
 ### 效果
 
+![](https://github.com/apinIron/EasyChart/blob/master/image/frame.gif)
+
+### 公共方法介绍
+
+```
+
+//设置当前数值 value:数值 isAnim:是否开启东湖 reset:是否从头开始进行动画
+setValue(int value, boolean isAnim, boolean reset)
+
+//设置动画时长 (默认为3秒)
+setProgressAnimTime(long time)
+
+//设置圆弧角度 
+//arcStartAngle:起始角度 (默认值:165)
+//arcSweepAngle:圆弧度数 (默认值:210)
+setArcAngle(float arcStartAngle,float arcSweepAngle){
+
+//设置刻度属性
+//calibrationNumberText 每个大刻度对应的数值 (默认值:int[]{350, 550, 600, 650, 700, 950})
+//calibrationBetweenText 每个大刻度中间的文字 (默认值:String[]{"较差", "中等", "良好", "优秀", "极好"})
+//largeCalibrationBetweenNumber 两个大刻度中间有多少个小刻度 (默认值:3)
+setCalibration(int[] calibrationNumberText, String[] calibrationBetweenText,int largeCalibrationBetweenNumber)
+
+//设置日期格式化的格式 (默认值:yyyy-MM-dd)
+setDatePattern(String pattern)
+
+//设置时间的显示格式 格式(如: 评估时间：{date}) {date}为占位符
+setDateStrPattern(String pattern)
+
+//设置数值等级的模板 格式(如: 信用{level}) {level}为占位符
+setValueLevelPattern(String pattern)
+
+//设置数值的画笔属性 (默认值 60sp white)
+setValuePaint(float spSize, @ColorInt int color)
+
+//设置数值等级的画笔属性 (默认值 25sp white)
+setValueLevelPaint(float spSize, @ColorInt int color)
+
+//设置日期对应的画笔属性 (默认值 10sp white)
+setDatePaint(float spSize, @ColorInt int color)
+
+//设置中间文字中间的间距 (默认值 7dp)
+setTextSpacing(int spacingDp)
+
+```
+
 #### Style 1
 
 ![](https://github.com/apinIron/EasyChart/blob/master/image/1.png)
