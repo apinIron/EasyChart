@@ -62,9 +62,10 @@ public class DashboardView3 extends BaseDashboardView {
     private static final float DEFAULT_PROGRESS_POINT_RADIUS = 3;
     private static final int DEFAULT_PROGRESS_POINT_COLOR = Color.WHITE;
     //内环默认属性
-    private static final int DEFAULT_INNER_ARC_COLOR = Color.argb(50, 255, 255, 255);
-    private static final int DEFAULT_PROGRESS_INNER_ARC_COLOR = Color.argb(170, 255, 255, 255);
     private static final float DEFAULT_INNER_ARC_WIDTH = 1.5f;
+    private static final int DEFAULT_INNER_ARC_COLOR = Color.argb(50, 255, 255, 255);
+    //内环进度的默认属性
+    private static final int DEFAULT_PROGRESS_INNER_ARC_COLOR = Color.argb(170, 255, 255, 255);
     //指示器默认属性
     private static final int DEFAULT_INDICATOR_COLOR = Color.argb(200, 255, 255, 255);
 

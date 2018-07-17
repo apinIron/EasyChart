@@ -64,8 +64,8 @@ public class DashboardView1 extends BaseDashboardView {
     //进度环的默认属性
     private static final int DEFAULT_PROGRESS_ARC_COLOR = Color.argb(200, 255, 255, 255);
     //进度点的默认属性
-    private static final int DEFAULT_PROGRESS_POINT_COLOR = Color.WHITE;
     private static final float DEFAULT_PROGRESS_POINT_RADIUS = 3;
+    private static final int DEFAULT_PROGRESS_POINT_COLOR = Color.WHITE;
     // 大刻度画笔默认值
     private final static float DEFAULT_LARGE_CALIBRATION_WIDTH = 2f;
     private final static int DEFAULT_LARGE_CALIBRATION_COLOR = Color.argb(200, 255, 255, 255);
