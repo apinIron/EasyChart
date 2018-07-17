@@ -262,7 +262,9 @@ public class DashboardView1 extends BaseDashboardView {
         mPaintOuterArc.setColor(mProgressArcColor);
         canvas.drawPath(path, mPaintOuterArc);
         //绘制进度点
-        canvas.drawCircle(mProgressPointPosition[0], mProgressPointPosition[1], mProgressPointRadius,  mPaintProgressPoint);
+        if(mProgressPointPosition[0] != 0 && mProgressPointPosition[1] != 0) {
+            canvas.drawCircle(mProgressPointPosition[0], mProgressPointPosition[1], mProgressPointRadius, mPaintProgressPoint);
+        }
     }
 
     /**

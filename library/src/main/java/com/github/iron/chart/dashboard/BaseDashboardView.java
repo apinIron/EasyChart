@@ -253,12 +253,15 @@ public abstract class BaseDashboardView extends View {
      * 计算需要进度条需要转动的角度
      */
     private float computeProgressSweepAngle(int value){
+        mValueLevel = "";
         //如果小于最小值
         if(value <= mMin){
+            setValueLevelByInterval(0);
             return 0;
         }
         //如果大于最大值
         if(value >= mMax){
+            setValueLevelByInterval(mCalibrationNumberText.length - 2);
             return mArcSweepAngle;
         }
         //计算其他情况
@@ -272,14 +275,22 @@ public abstract class BaseDashboardView extends View {
         float intervalMin = mCalibrationNumberText[index];
         float intervalMax = mCalibrationNumberText[index + 1];
         //当前数值所在区域文字
-        if(mCalibrationBetweenText != null && index < mCalibrationBetweenText.length){
-            mValueLevel = mCalibrationBetweenText[index];
-            if(!TextUtils.isEmpty(mValueLevelPattern) && mValueLevelPattern.contains("{level}")){
-                mValueLevel = mValueLevelPattern.replace("{level}", mValueLevel);
-            }
-        }
-
+        setValueLevelByInterval(index);
         return angle + ((value - intervalMin) / (intervalMax - intervalMin)) * mLargeCalibrationBetweenAngle;
+    }
+
+    /**
+     * 根据当前值所在区间设置数值等级
+     */
+    private void setValueLevelByInterval(int index){
+        if(mCalibrationBetweenText == null || mCalibrationBetweenText.length < index){
+            mValueLevel = "";
+            return;
+        }
+        mValueLevel = mCalibrationBetweenText[index];
+        if(!TextUtils.isEmpty(mValueLevelPattern) && mValueLevelPattern.contains("{level}")){
+            mValueLevel = mValueLevelPattern.replace("{level}", mValueLevel);
+        }
     }
 
     /**
@@ -290,7 +301,7 @@ public abstract class BaseDashboardView extends View {
         //是否有区间数据
         if(mCalibrationNumberText != null && mCalibrationNumberText.length > 0){
             for (int j = 0; j < mCalibrationNumberText.length; j++) {
-                if(mCalibrationNumberText[j] >= value){
+                if(mCalibrationNumberText[j] > value){
                     return j;
                 }
             }
@@ -381,16 +392,20 @@ public abstract class BaseDashboardView extends View {
      * 设置刻度信息
      */
     public void setCalibration(int[] calibrationNumberText, String[] calibrationBetweenText,int largeCalibrationBetweenNumber){
+        if(calibrationNumberText == null || calibrationNumberText.length < 2 ||
+                calibrationNumberText[0] >= calibrationNumberText[calibrationNumberText.length - 1]){
+            return;
+        }
         //设置刻度数量数据
-        mLargeCalibrationNumber = calibrationNumberText == null ? 0 : calibrationNumberText.length;
+        mLargeCalibrationNumber = calibrationNumberText.length;
         mLargeBetweenCalibrationNumber = largeCalibrationBetweenNumber;
         //计算刻度相关数据
         resetCalibrationData();
         //设置刻度对应的显示数据
         mCalibrationNumberText = calibrationNumberText;
         mCalibrationBetweenText = calibrationBetweenText;
-        mMin = mCalibrationNumberText == null ? 0 : mCalibrationNumberText[0];
-        mMax = mCalibrationNumberText == null || mCalibrationNumberText.length < 1 ? 0 : mCalibrationNumberText[mCalibrationNumberText.length - 1];
+        mMin = mCalibrationNumberText[0];
+        mMax = mCalibrationNumberText[mCalibrationNumberText.length - 1];
 
         postInvalidate();
     }
