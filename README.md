@@ -62,3 +62,11 @@ setTextSpacing(int spacingDp)
 
 ![](https://github.com/apinIron/EasyChart/blob/master/image/1.png)
 
+#### Style 2
+
+![](https://github.com/apinIron/EasyChart/blob/master/image/2.png)
+
+#### Style 3
+
+![](https://github.com/apinIron/EasyChart/blob/master/image/3.png)
+
