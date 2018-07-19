@@ -25,7 +25,7 @@
 //设置当前数值 value:数值 isAnim:是否开启东湖 reset:是否从头开始进行动画
 setValue(int value, boolean isAnim, boolean reset)
 
-//设置动画时长 (默认为3秒)
+//设置动画时长 (默认为2.5秒)
 setProgressAnimTime(long time)
 
 //设置圆弧角度 
