@@ -45,6 +45,7 @@ attachPieDataView(IPieDataView view)
 ![](https://github.com/apinIron/EasyChart/blob/master/image/4.png)
 
 ```
+
 //设置饼图的圆弧宽度 (默认值: 15dp)
 setPieArcWidth(int dpSize)
 
@@ -81,5 +82,25 @@ setLineWidth(float dpSize)
 
 //设置数值的属性 (默认值: 8sp)
 setValueTextPaint(float spSize)
+
+```
+
+#### PieDataView
+
+![](https://github.com/apinIron/EasyChart/blob/master/image/7.png)
+
+```
+
+//设置列数 (默认值: 1)
+setColumnNumber(int number)
+
+//设置文字画笔属性 (默认值: 12sp Color.BLACK)
+setTextPaint(float spSize,@ColorInt int color)
+
+//设置上下行文字之间的间隔 (默认值: 8dp)
+setTextSpacing(float dpSize)
+
+//设置数据形式格式 (默认值: {name} {value})
+setShowFormat(String format)
 
 ```
