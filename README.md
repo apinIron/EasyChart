@@ -27,3 +27,6 @@
 
 ![](https://github.com/apinIron/EasyChart/blob/master/image/frame.gif)
 
+#### 饼图
+
+[饼图图表 API](https://github.com/apinIron/EasyChart/blob/master/README-PIE.md)
