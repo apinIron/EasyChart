@@ -30,3 +30,5 @@
 #### 饼图
 
 [饼图图表 API](https://github.com/apinIron/EasyChart/blob/master/README-PIE.md)
+
+![](https://github.com/apinIron/EasyChart/blob/master/image/frame1.gif)
