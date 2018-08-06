@@ -123,9 +123,8 @@ public abstract class BaseDashboardView extends View {
      * 初始化
      */
     private void init(){
-
-        mTextSpacing = dp2px(DEFAULT_TEXT_SPACING);
         //默认数值
+        mTextSpacing = dp2px(DEFAULT_TEXT_SPACING);
         mCalibrationNumberText = DEFAULT_CALIBRATION_NUMBER;
         mCalibrationBetweenText = DEFAULT_CALIBRATION_BETWEEN;
         mMin = mCalibrationNumberText[0];
@@ -177,8 +176,6 @@ public abstract class BaseDashboardView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
         int size = dp2px(DEFAULT_SIZE);
         mPadding = Math.max(Math.max(getPaddingLeft(), getPaddingTop()),
                 Math.max(getPaddingRight(), getPaddingBottom()));
@@ -505,7 +502,7 @@ public abstract class BaseDashboardView extends View {
      * sp2px
      */
     protected int sp2px(float spValue) {
-        final float fontScale = getResources().getDisplayMetrics().scaledDensity;
+        float fontScale = getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
 

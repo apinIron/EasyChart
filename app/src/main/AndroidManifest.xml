@@ -24,6 +24,12 @@
 
         <activity android:name=".Style3Activity"/>
 
+        <activity android:name=".PieStyle1Activity"/>
+
+        <activity android:name=".PieStyle2Activity"/>
+
+        <activity android:name=".PieStyle3Activity"/>
+
     </application>
 
 </manifest>

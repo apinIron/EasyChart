@@ -11,21 +11,42 @@
         android:id="@+id/btn_style1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Style 1"
+        android:text="仪表盘 Style 1"
         android:layout_margin="5dp"/>
 
     <Button
         android:id="@+id/btn_style2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Style 2"
+        android:text="仪表盘 Style 2"
         android:layout_margin="5dp"/>
 
     <Button
         android:id="@+id/btn_style3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Style 3"
+        android:text="仪表盘 Style 3"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/btn_style4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="饼图 Style 1"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/btn_style5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="饼图 Style 2"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/btn_style6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="饼图 Style 3"
         android:layout_margin="5dp"/>
 
 </LinearLayout> 

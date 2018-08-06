@@ -3,7 +3,6 @@ package com.github.iron.chart.dashboard;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
@@ -39,8 +38,6 @@ public class DashboardView1 extends BaseDashboardView {
     private RectF mRectInnerArc;
     //进度条的圆点属性
     private float[] mProgressPointPosition;
-    private float[] mProgressPointTan;
-    private Matrix mProgressPointMatrix;
     private float mProgressPointRadius;
     //圆环画笔颜色
     private int mOuterArcColor;
@@ -140,8 +137,6 @@ public class DashboardView1 extends BaseDashboardView {
 
         //进度点的图片
         mProgressPointPosition = new float[2];
-        mProgressPointTan = new float[2];
-        mProgressPointMatrix = new Matrix();
     }
 
     /**
@@ -254,10 +249,7 @@ public class DashboardView1 extends BaseDashboardView {
         path.addArc(mRectOuterArc, arcStartAngle, progressSweepAngle);
         //计算切线值和为重
         PathMeasure pathMeasure = new PathMeasure(path, false);
-        pathMeasure.getPosTan(pathMeasure.getLength(), mProgressPointPosition, mProgressPointTan);
-        //进行平移
-        mProgressPointMatrix.reset();
-        mProgressPointMatrix.postTranslate(mProgressPointPosition[0] - mProgressPointRadius / 2,mProgressPointPosition[1] - mProgressPointRadius / 2);
+        pathMeasure.getPosTan(pathMeasure.getLength(), mProgressPointPosition, null);
         //绘制圆环
         mPaintOuterArc.setColor(mProgressArcColor);
         canvas.drawPath(path, mPaintOuterArc);

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathEffect;
@@ -43,8 +42,6 @@ public class DashboardView3 extends BaseDashboardView {
     private float mArcSpacing;
     //进度条的圆点属性
     private float[] mProgressPointPosition;
-    private float[] mProgressPointTan;
-    private Matrix mProgressPointMatrix;
     private float mProgressPointRadius;
     //指标器的Path
     private Path mIndicatorPath;
@@ -122,8 +119,6 @@ public class DashboardView3 extends BaseDashboardView {
 
         //进度点的图片
         mProgressPointPosition = new float[2];
-        mProgressPointTan = new float[2];
-        mProgressPointMatrix = new Matrix();
     }
 
     /**
@@ -182,10 +177,7 @@ public class DashboardView3 extends BaseDashboardView {
         path.addArc(mRectOuterArc, arcStartAngle, progressSweepAngle);
         //计算切线值和为重
         PathMeasure pathMeasure = new PathMeasure(path, false);
-        pathMeasure.getPosTan(pathMeasure.getLength(), mProgressPointPosition, mProgressPointTan);
-        //根据切点进行位置的平移
-        mProgressPointMatrix.reset();
-        mProgressPointMatrix.postTranslate(mProgressPointPosition[0] - mProgressPointRadius,mProgressPointPosition[1] - mProgressPointRadius);
+        pathMeasure.getPosTan(pathMeasure.getLength(), mProgressPointPosition, null);
         //绘制圆环
         mPaintOuterArc.setColor(mProgressOuterArcColor);
         canvas.drawPath(path, mPaintOuterArc);
