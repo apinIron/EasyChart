@@ -29,6 +29,9 @@
 
 #### 饼图
 
+介绍文章：
+[https://juejin.im/post/5b67f0b55188251aab715fd6](https://juejin.im/post/5b67f0b55188251aab715fd6)
+
 [饼图图表 API](https://github.com/apinIron/EasyChart/blob/master/README-PIE.md)
 
 ![](https://github.com/apinIron/EasyChart/blob/master/image/frame1.gif)
